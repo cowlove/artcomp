@@ -1,0 +1,9 @@
+# Trim/crop 
+convert in.png -trim +repage out.png
+
+# Convert color
+convert jumbo.png -fuzz 90% -fill red -opaque white out.png  && feh out.png
+
+# Trim out erroneous specks of non-lime color and trim 
+convert jumbo.png -matte \( +clone -fuzz 50% -transparent lime \) -compose DstOut -composite  -trim +repage  -fuzz 90% -fill red -opaque white out.png && feh out.png
+

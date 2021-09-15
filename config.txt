@@ -1,0 +1,134 @@
+# Configuration file for generating montage art pieces
+#######################################################
+
+[[directory]]
+    name="Jumbo images"             # Name of the directory to look in for the images
+                                    # There may be multiple [[directory]] sections to describe
+                                    # different directories 
+
+    choose=12                       # Total number of images to choose from this directory 
+
+    locations = [                   # List of possible coordinates that images from this directory 
+        [80,81],                    # can be placed at 
+        [1183,496],
+        [1478,171],
+        [512,585],
+        [238,1066],
+        [1824,1212],
+        [1700,864],
+        [883,832],
+        [1181,1578],
+        [509,1502],
+        [1829,1894],
+        [142,1915],
+        [1968,121],
+        [526,190],
+        [1292,1190]
+    ]
+
+    rotate = [-180, 180]                    # Range of possible rotation for images from this directory
+
+    scale = [0.75, 1.25]                    # Range of image scaling for images from this directory 
+
+    [[directory.rarities]]                  # Rules to set rarity for specific images or groups of images
+        "Untitled_Artwork-42.png" = 1000
+
+# Next directory name and parameters for that directory 
+#########################################################
+
+[[directory]]
+    name="Small images"
+    choose=14
+    locations = [
+        [80,81],
+        [1183,496],
+        [1478,171],
+        [512,585],
+        [238,1066],
+        [1824,1212],
+        [1700,864],
+        [883,832],
+        [1181,1578],
+        [509,1502],
+        [1829,1894],
+        [142,1915],
+        [1968,121],
+        [526,190],
+        [1292,1190]
+    ]
+    [[directory.extra_colors]]      # Extra colors/rarities to be available for only files in this directory 
+        "rgb(0, 0, 0)" = 0
+        "rgb(200, 198, 185)" = 0
+
+# Color and color rarity list, use "0" for default rarity, "10" is 10 times as rare or 1/10th as often 
+######################################################################################################
+
+[colors]
+"rgb(0, 0, 0)" = 0
+"rgb(200, 198, 185)" = 0
+"rgb(11, 104, 196)" = 0
+"rgb(255, 236, 73)" = 0
+"rgb(244, 61, 236)" = 0
+"rgb(75, 217, 60)" = 0
+"rgb(87, 22, 176)" = 0
+"rgb(67, 112, 247)" = 0
+"rgb(68, 214, 246)" = 0
+"rgb(250, 198, 27)" = 0
+"rgb(247, 228, 67)" = 0
+"rgb(66, 207, 239)" = 0
+"rgb(50, 50, 124)" = 0
+"rgb(226, 69, 255)" = 0
+"rgb(234, 50, 125)" = 0
+"rgb(45, 156, 221)" = 0
+"rgb(88, 187, 133)" = 0
+"rgb(80, 232, 0)" = 0
+"rgb(143, 49, 110)" = 0
+"rgb(51, 165, 171)" = 0
+"rgb(247, 243, 196)" = 0
+"rgb(238, 195, 30)" = 0
+"rgb(167, 33, 114)" = 0
+"rgb(167, 226, 234)" = 0
+"rgb(113, 238, 236)" = 0
+"rgb(228, 12, 0)" = 0
+"rgb(200, 225, 124)" = 0
+"rgb(238, 248, 249)" = 0
+"rgb(250, 193, 88)" = 0
+"rgb(246, 139, 30)" = 0
+"rgb(236, 234, 223)" = 0
+"rgb(47, 123, 191)" = 0
+"rgb(155, 202, 62)" = 0
+"rgb(189, 36, 39)" = 0
+"rgb(78, 34, 222)" = 0
+"rgb(43, 20, 255)" = 0
+"rgb(36, 20, 31)" = 0
+"rgb(179, 251, 85)" = 0
+"rgb(160, 117, 130)" = 0
+"rgb(100, 167, 137)" = 0
+"rgb(245, 97, 103)" = 0
+"rgb(254, 240, 216)" = 0
+"rgb(246, 127, 60)" = 0
+"rgb(198, 223, 123)" = 0
+"rgb(160, 231, 146)" = 0
+"rgb(224, 251, 203)" = 0
+"rgb(249, 241, 7)" = 0
+"rgb(247, 123, 7)" = 0
+
+
+##################################################################################
+# If a [[directory]] section doesn't have its own rotate, scale, rarities, etc values
+# use the default global values set here 
+
+[global]
+rotate = [-180, 180]                    
+scale = [0.75, 1.25]                    
+size = 2048                     # size of main canvas
+chop = 1                        # chop pieces that fall outside the canvas 
+
+[output]
+file="SeriesName%04d.png"
+count=1000
+
+[rarities] 
+"*_RARE.png" = 10                   
+"*_SUPERRARE.png" = 100        
+
